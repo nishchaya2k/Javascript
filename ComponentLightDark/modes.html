@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarkLight</title>
+    <link rel="stylesheet" href="./modes.css">
+</head>
+
+<body>
+
+    <div class="main-div">
+
+        <button class="btn">Dark Mode</button>
+
+        <div class="selfToggle">
+            <input type="checkbox" name="checkbox" id="toggle">
+            <label for="toggle" class="switch"></label>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            let mainDiv = document.querySelector(".main-div");
+            mainDiv.style.background = 'rgb(205, 144, 168)'; // Set initial background color
+
+            let modeButton = document.querySelector(".btn");
+            modeButton.style.background = 'rgb(37, 37, 51)' // Set initial background color
+            modeButton.style.color = 'white'                // Set initial text color
+
+            let toggleButton = document.querySelector(".selfToggle")
+            let toggleCheckbox = document.getElementById("toggle");
+
+            toggleCheckbox.checked = false;
+
+
+
+            function changeScreenMode() {
+                if (modeButton.innerText === 'Dark Mode') {
+                    mainDiv.style.background = 'rgb(37, 37, 51)'; // Dark mode
+                    modeButton.innerText = 'Light Mode';
+                    modeButton.style.color = 'black'
+                    modeButton.style.background = 'rgb(205, 144, 168)'
+                    toggleCheckbox.checked = true;
+
+                } else {
+                    mainDiv.style.background = 'rgb(205, 144, 168)'; // Light mode
+                    modeButton.innerText = 'Dark Mode';
+                    modeButton.style.color = 'white'
+                    modeButton.style.background = 'rgb(37, 37, 51)'
+                    toggleCheckbox.checked = false;
+                }
+            }
+
+            modeButton.addEventListener('click', changeScreenMode);
+            toggleCheckbox.addEventListener('change', changeScreenMode);
+        });
+    </script>
+</body>
+
+</html>
