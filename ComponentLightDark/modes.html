@@ -40,6 +40,7 @@
 
             function changeScreenMode() {
                 if (modeButton.innerText === 'Dark Mode') {
+                    mainDiv.style.transition = 'background-color 0.5s';
                     mainDiv.style.background = 'rgb(37, 37, 51)'; // Dark mode
                     modeButton.innerText = 'Light Mode';
                     modeButton.style.color = 'black'
@@ -47,6 +48,7 @@
                     toggleCheckbox.checked = true;
 
                 } else {
+                    mainDiv.style.transition = 'background-color 0.5s';
                     mainDiv.style.background = 'rgb(205, 144, 168)'; // Light mode
                     modeButton.innerText = 'Dark Mode';
                     modeButton.style.color = 'white'
