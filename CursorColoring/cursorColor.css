@@ -1,0 +1,23 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.main-div {
+  width: 100vw;
+  height: 100vh;
+  background-color: gray;
+}
+
+.box {
+  width: 60px;
+  height: 60px;
+  background-color: bisque;
+  visibility: hidden;
+}
+
+.active {
+  visibility: visible;
+  transition: transform 0.5s ease;
+  transition: transform 1s ease, background-color 1s ease;
+}
