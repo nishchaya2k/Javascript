@@ -1,0 +1,72 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.steps {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  height: 30px;
+  width: 30px;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link {
+  height: 1px;
+  width: 100px;
+  background-color: black;
+}
+
+.buttons {
+  width: 100%;
+  margin-top: 50px;
+  font-size: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.leftButton,
+.rightButton {
+  padding: 5px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.completed {
+  border-color: rgb(28, 178, 14);
+  border-width: 2px;
+}
+
+.linked {
+  height: 2px;
+  background-color: rgb(28, 178, 14);
+}
+
+.stop {
+  cursor: not-allowed;
+}
