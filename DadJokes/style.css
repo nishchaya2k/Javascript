@@ -1,0 +1,32 @@
+body {
+  width: 100vw;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  width: 50%;
+  height: 40%;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(248, 203, 179);
+}
+.joke {
+  font-size: 20px;
+}
+button {
+  width: max-content;
+  height: 40px;
+  padding: 10px;
+  line-height: 0px;
+  background-color: rgb(188, 198, 207);
+  font-size: 20px;
+  cursor: pointer;
+}
