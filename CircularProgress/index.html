@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circular Progress Bar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="outerCircle">
+            <div class="innerCircle">
+                <div class="progress-ring">
+                    <svg class="circle" width="200" height="200">
+                        <circle class="background" cx="100" cy="100" r="90" stroke-width="10" />
+                        <circle class="foreground" cx="100" cy="100" r="90" stroke-width="10" stroke-dasharray="565.48"
+                            stroke-dashoffset="141.37" />
+                    </svg>
+                    <div class="percentage">75%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
