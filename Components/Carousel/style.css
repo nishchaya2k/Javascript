@@ -1,0 +1,51 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.images {
+  width: 255px;
+  display: flex;
+  /* border: 1px solid red; */
+  justify-content: start;
+  align-items: center;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 2px;
+  scrollbar-width: none;
+}
+
+.radio {
+  display: flex;
+  gap: 4px;
+}
+
+.radioBtn {
+  width: 5px;
+  height: 5px;
+  padding: 2px;
+  border-radius: 50% 50%;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.active {
+  background-color: blue;
+}

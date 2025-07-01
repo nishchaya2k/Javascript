@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.progress {
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 15rem;
+  height: 1rem;
+  overflow: hidden;
+}
+
+.progress-bar {
+  padding: 0px;
+  margin: 0px;
+  width: 0%;
+  height: 1rem;
+  background-color: green;
+  transition: all 3s;
+}
+
+button {
+  padding: 2px 8px 2px 8px;
+  cursor: pointer;
+}

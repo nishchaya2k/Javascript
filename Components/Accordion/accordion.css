@@ -1,0 +1,44 @@
+body {
+  background-color: rgb(255, 215, 255);
+  padding: 40px;
+  font-family: Arial, Arial, Helvetica, sans-serif;
+  line-height: 1.6rem;
+}
+.accordion {
+  background-color: white;
+  width: 50%;
+  padding: 4px 16px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 5px rgb(255, 205, 255);
+  cursor: pointer;
+}
+
+.question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon {
+  margin-right: 1rem;
+  transition: transform 0.2s;
+}
+
+.icon.active {
+  display: none;
+}
+
+.answer {
+  color: #666;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s;
+}
+
+/* we are using scroll height, becoz here giving height manually preventing transition effect 
+and we use scrollHeight, also css dont allow scrollheight so we use that in js, 
+*/
+.answer.active {
+  max-height: fit-content;
+}

@@ -56,7 +56,6 @@ function runTime() {
 
 }
 
-
 function formatTime() {
 
     let extraMins = Math.floor(secs.value / 60);

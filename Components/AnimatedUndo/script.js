@@ -1,7 +1,6 @@
 const boxes = document.querySelectorAll(".boxes")
 let arr = []
 
-
 boxes.forEach((box) => {
     box.addEventListener('click', function (event) {
         this.classList.add("newBgColor")

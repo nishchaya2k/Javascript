@@ -11,14 +11,12 @@ body {
   align-items: center;
   justify-content: center;
 }
-
 .wrapper {
   display: grid;
   grid-template-columns: 150px 150px;
   row-gap: 60px;
   justify-items: center;
 }
-
 .boxes {
   width: 100px;
   height: 100px;
@@ -29,7 +27,6 @@ body {
   cursor: pointer;
   background-color: yellow;
 }
-
 .newBgColor {
   background-color: green;
 }

@@ -16,7 +16,7 @@
 }
 
 .loader {
-  border: 5px solid blue;
+  border: 3px solid blue;
   background-color: rgb(140, 135, 134);
   animation: moveLoader 4s linear infinite;
 }
@@ -28,8 +28,7 @@
     border-color: #ffcd02;
   }
   50% {
-    width: 50%;
-    /* width: 80%; */
+    width: 80%;
     transform: translateX(50%);
     border-color: #e84f47;
   }
