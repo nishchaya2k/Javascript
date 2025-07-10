@@ -48,6 +48,10 @@ console.log(deepest(inputObj))
 
 //1.1 Consider Object and Array both as nested
 
+
+
+
+
 function deepest1(obj) {
     let maxDepth = -1;
     let deepestValue;
@@ -96,7 +100,7 @@ let inputObj1 = {
                     name: "Landmark 1",
                     coordinates: { lat: 22.7196, long: 75.8577 },
                     reviews: [
-                        { user: "User2", rating: 3 } 
+                        { user: "User2", rating: 3 } // This is a depth level of 4
                     ]
                 }
             ]
@@ -104,7 +108,7 @@ let inputObj1 = {
     }
 };
 
-console.log(deepest1(inputObj1)); 
+console.log(deepest1(inputObj1)); // Expected output: 3
 
 
 /*

@@ -1,8 +1,9 @@
 // Q. Program to find longest word in a given sentence ?
 
-let sentence = "JavaScript is a single threaded programming language"
 
 //1st Approach 
+let sentence = "JavaScript is a single threaded programming language"
+
 let words = sentence.split(" ")  //return array of elements
 
 let longestLength;

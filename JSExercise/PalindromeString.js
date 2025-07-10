@@ -6,7 +6,7 @@ let string2 = "abccba"
 
 // 1st Approach 
 const checkPalindrome = (string) => {
-    let end = string.length-1;
+    let end = string.length - 1;
     let start = 0;
 
     while (start <= end) {
@@ -24,12 +24,11 @@ console.log(checkPalindrome(string1))
 
 
 // 2nd Approach
+
+
 const checkPalindrome2 = (string) => {
-    // Reverse the string
-    const reversedString = string.split('').reverse().join('');
-    
-    // Compare the original string with the reversed string
-    return string === reversedString ? "Palindromic String" : "Not a Palindromic String";
+    const reverseString = string.split('').reverse().join('');
+    return reverseString === string ? "Palindromic String" : "Not Palindromic String"
 }
 
-console.log(checkPalindrome2(string2)); 
+console.log(checkPalindrome2(string2))
