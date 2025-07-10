@@ -16,18 +16,4 @@ As these methods also return promises, they can be chained
 
  */
 
-//Example-1
-//How fetch works?
-const API_URL = "https://api.github.com/users/nishchaya2k"
 
-async function handlePromise() {
-
-    //fetch return promise
-    const data = await fetch(API_URL);
-
-    //.json() also return a promise
-    const result = await data.json();
-    console.log(result);
-}
-
-handlePromise();

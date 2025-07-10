@@ -32,7 +32,7 @@ we also call it 'fail fast', it quickly fails as one of api rejected why to wait
 
 2. Promise.allSettled() -> wait for all the results to settle, and best method to look for
 
-eg. promise.all([p1,p2,p3]) -> wait for all the results to settle
+eg. promise.allSettled([p1,p2,p3]) -> wait for all the results to settle
 
 suppose x time to get results
 p1 -> 3 secs 
@@ -89,9 +89,6 @@ Settle can be ->
 -   resove or reject
 -   success or failure
 -   fullfilled or rejected
-
-
-
 */
 
 //  1.  Promise.all() -> 
