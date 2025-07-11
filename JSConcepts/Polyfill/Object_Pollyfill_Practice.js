@@ -29,3 +29,98 @@ const Assign3 = { c: { c1: 4 } }
 
 console.log("Assign", Object.myAssign(Assign1, Assign3))
 console.log("Assign", Assign1)
+
+
+// 2. entries(): -> static method returns an array of a given object's own enumerable string-keyed property key-value pairs.
+
+const person = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 50,
+    eyeColor: "blue"
+}
+
+const person1 = [{ firstName: "John" }]
+console.log(Object.entries("ddd"))
+
+Object.prototype.myEntries = function (data) {
+    const type = Object.prototype.toString.call(data);
+
+    if (type !== "[object String]" && type !== "[object Array]" && type !== "[object Object]") return [];
+
+    let result = [];
+
+    if (type === "[object String]") {
+        for (let i = 0; i < data.length; i++) {
+            result.push([i, data[i]]);
+        }
+        return result;
+    }
+
+
+    if (type === "[object Array]") {
+        for (let i = 0; i < data.length; i++) {
+            result.push([i, data[i]]);
+        }
+        return result;
+    }
+
+    if (type === "[object Object]") {
+        const keys = Object.keys(data);
+        for (let i = 0; i < keys.length; i++) {
+            result.push([keys[i], data[keys[i]]])
+        }
+        return result;
+    }
+
+    return [];
+
+}
+
+
+console.log("Entries", Object.myEntries(person))
+
+
+//3. values(): method returns an array of the property values of an object, method does not change the original object. its Optional An object as paramter, will works for string, array as well
+
+const Values = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 50,
+    eyeColor: "blue"
+};
+
+console.log("Values", Object.values(Values))
+
+Object.prototype.myValues = function () {
+    const type = Object.prototype.toString.call(data)
+    if (type !== "[object String" && type !== "[object Array]" && type !== "[object Array]") {
+        return [];
+    }
+
+    if (type === "[object String]") {
+        for (let i = 0; i < data.length; i++) {
+            result.push([data[i]]);
+        }
+        return result;
+    }
+
+    if (type === "[object Array]") {
+        for (let i = 0; i < data.length; i++) {
+            result.push([data[i]]);
+        }
+        return result;
+    }
+
+    if (type === "[object Object]") {
+        const keys = Object.keys(data);
+        for (let i = 0; i < keys.length; i++) {
+            result.push([data[keys[i]]])
+        }
+        return result;
+    }
+}
+
+console.log("Values", Object.values(Values))
+
+
