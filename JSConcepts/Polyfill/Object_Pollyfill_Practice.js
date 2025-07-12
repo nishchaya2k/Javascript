@@ -162,3 +162,25 @@ Object.prototype.myKeys = function (data = undefined) {
 }
 
 console.log("Keys", Object.myKeys(Keys))
+
+
+// 5. is(): Object.is() method is used to compare if two values are the same value.
+
+console.log("is", Object.is(NaN, NaN));
+
+Object.myIs = function (value1, value2) {
+    if (value1 === value2) {
+        // Handles +0 vs -0: they are === but not the same in Object.is
+        return value1 !== 0 || 1 / value1 === 1 / value2;
+    }
+    // Handles NaN: only NaN is not equal to itself
+    return value1 !== value1 && value2 !== value2;
+};
+
+
+console.log("Is", Object.myIs(NaN, NaN))
+
+/*
+If value1 is zero, checks if 1 / value1 equals 1 / value2 —
+because 1 / +0 === +Infinity and 1 / -0 === -Infinity.
+*/
