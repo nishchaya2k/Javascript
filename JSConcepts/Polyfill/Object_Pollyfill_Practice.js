@@ -124,3 +124,41 @@ Object.prototype.myValues = function () {
 console.log("Values", Object.values(Values))
 
 
+//4. Keys():  method returns an array with the keys of an object. method does not change the original object. its Optional An object as paramter, will works for string, array as well
+
+const Keys = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 50,
+    eyeColor: "blue"
+};
+
+console.log("Keys", Object.keys(Keys))
+
+
+Object.prototype.myKeys = function (data = undefined) {
+
+    if (!data) throw TypeError("Can't Convert Undefined or null to object")
+
+
+    const type = Object.prototype.toString.call(data);
+    if (type !== "[object String]" && type !== "[object Object]" && type !== "[object Array]") {
+        return [];
+    }
+    const result = [];
+    if (type == "[object String]" || type == "[object Array]") {
+        for (let i = 0; i < data.length; i++) {
+            result.push(String(i))
+        }
+    }
+    if (type == "[object Object]") {
+
+        const keys = Object.keys(data)
+        for (let i = 0; i < keys.length; i++) {
+            result.push(keys[i])
+        }
+    }
+    return result;
+}
+
+console.log("Keys", Object.myKeys(Keys))
