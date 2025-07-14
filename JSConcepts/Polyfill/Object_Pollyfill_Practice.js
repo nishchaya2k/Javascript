@@ -9,7 +9,7 @@ console.log("Assign", Assign)
 
 Object.prototype.myAssign = function (target, source) {
 
-    if (!target && !source) throw TypeError("Cannot convert undefined or null to object")
+    if (!target && !source) throw new TypeError("Cannot convert undefined or null to object")
 
 
     if (!target) return source;
