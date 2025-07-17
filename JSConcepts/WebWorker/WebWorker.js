@@ -49,3 +49,7 @@ Summary & Key Points:
 
 8. onmessage is used to receive messages.
 */
+
+
+
+// Doubt -> Real Time Use Case: ?
