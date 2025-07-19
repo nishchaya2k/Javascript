@@ -1,23 +1,56 @@
 /*
-1.  Web Storage Api: is used by developers store some data in web browser, in key-value pairs
-
-2.  Two Mechanism to store data:
-->  Local Storage and Session Storage
-
-i).  Session Storage: Data is persisted only for that particualar session
-
-what is session? suppose user is visiting a webapp and as soon as it visits the webapp a session is started and data which is stored in that session storage will only be persisted till he is on that web browser window and as soon as he closes the window and close the tab data is gone.
-
-Why its better than cookies?
-Unlike cookies its data is not being send to the server while making the network request call
-
-and Also it has larger capacity to hold data eg 5mb, unlike cookies where few bytes data can only be stored
-
-(ii).   Local Storage: Same as session storage  but it does comes up with expiry even if window or tab close data still be persiste over there, more storage capicity then session
-local storage stores on window object
-Local storage accepts only string
-
-functions for LocalStorage:
-
-  
+    1. Web Storage API: Used by developers to store some data in the web browser in key-value pairs.
+    
+    2. Two Mechanisms to store data:
+        -> Local Storage
+        -> Session Storage
+    
+    (i). Session Storage:
+        - Data is persisted only for that particular session.
+    
+    What is a session?
+        - Suppose a user visits a web app — as soon as the visit starts, a session is created.
+        - Data stored in session storage will be available as long as the browser tab or window is open.
+        - Once the window or tab is closed, the session ends and the data is lost.
+    
+    Why is it better than cookies?
+        - Unlike cookies, data stored in session storage is **not sent to the server** with each request.
+        - It also allows more storage space (around 5MB) compared to cookies (which allow only a few KBs).
+    
+    (ii). Local Storage:
+        - Similar to session storage, **but data persists even after the window/tab is closed.**
+        - Local storage offers **more capacity than session storage**.
+        - Data remains until explicitly cleared (either by code or manually by the user).
+        - Local storage is part of the `window` object.
+    
+    - **Important Point**: Local Storage only accepts strings!
+    
+    - You **cannot directly store objects** in local storage.  
+    For example, this won't work correctly:
+    ```javascript
+    localStorage.setItem("user", {name: "nishchaya"}); // WRONG
+    ````
+    
+    - Instead, you need to convert the object to a string using `JSON.stringify`:
+    
+    ```javascript
+    localStorage.setItem("user", JSON.stringify({name: "nishchaya"}));
+    ```
+    
+    And to retrieve and use it again as an object, you must parse it back:
+    
+    ```javascript
+    const user = JSON.parse(localStorage.getItem("user"));
+    console.log(user.name); // Output: nishchaya
+    ```
+    
+    Functions for LocalStorage:
+    
+    * `localStorage.setItem(key, value)` → Store data
+    * `localStorage.getItem(key)` → Retrieve data
+    * `localStorage.removeItem(key)` → Delete a key
+    * `localStorage.clear()` → Clear all data
+        
 */
+
+        
