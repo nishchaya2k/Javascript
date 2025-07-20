@@ -471,8 +471,7 @@ console.log("splice", Splice.mySplice(2, 2, 1), Splice)
 //24. unshift: 
 
 
-//25. from: method returns an array from any object with a length property or method returns an array from any iterable object.
-
+//25. 
 
 
 
