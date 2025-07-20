@@ -280,4 +280,8 @@ console.log("Substr", Substr.mySubstr(-1, 2))
 
 
 
-// 12. replace: 
+// 12. search: 
+let Search = "Hello World its me"
+
+console.log("search",Search.search("me"))
+

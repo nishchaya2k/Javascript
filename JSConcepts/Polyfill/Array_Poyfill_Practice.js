@@ -456,8 +456,6 @@ newFunc("Rs", 500000)
 
 const Splice = [1, 2, 3, 5, 4];
 console.log("splice", Splice.splice('1'), Splice);
-
-
 Array.prototype.mySplice = function (index = undefined, remCount = undefined, ...items) {
     if (!Array.isArray()) return new TypeError('Not a Error')
 
@@ -468,12 +466,22 @@ Array.prototype.mySplice = function (index = undefined, remCount = undefined, ..
 console.log("splice", Splice.mySplice(2, 2, 1), Splice)
 
 
-//24. unshift: 
+//24. indexOf(): Returns the index of the first occurrence of a value. Returns -1 if not found.
+
+const MyIndexOf = [10, 20, 20, 30];
+
+console.log("indexOf", MyIndexOf.indexOf(20))
 
 
-//25. 
+Array.prototype.myIndexOf = function (value) {
 
+    for (let i = 0; i < this.length; i++) {
+        if (this[i] == value) return i;
+    }
 
+    return -1
+}
 
+console.log("indexOf", MyIndexOf.myIndexOf(20))
 
 
