@@ -485,3 +485,37 @@ Array.prototype.myIndexOf = function (value) {
 console.log("indexOf", MyIndexOf.myIndexOf(20))
 
 
+
+// 25. fill(): Fills all elements from start to end with a static value., original array also get changed
+
+let Fill = [1, 2, 4, 53, 2, 4];
+
+// console.log("fill", Fill.fill(false, 1), Fill)
+
+Array.prototype.myFill = function (value, start = undefined, end = undefined) {
+    if (start !== undefined && end !== undefined && end <= start && end >= 0) {
+        return this;
+    }
+
+    let endIndex = end !== undefined ? (end < 0 ? this.length + end : end) : this.length;
+    let startIndex = start !== undefined ? (start < 0 ? this.length + start : start) : 0;
+
+
+
+    for (let i = startIndex; i < endIndex; i++) {
+        this[i] = value
+    }
+
+    return this;
+}
+
+
+console.log("fill", Fill.myFill(false, 1, -1), Fill)
+
+
+
+
+
+//28. 
+
+
