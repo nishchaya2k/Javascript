@@ -60,3 +60,12 @@ function windowsChecksForUpdate(version) {
 
 
 microsoftReleasesUpdate('11.0.2345');
+
+
+/* 
+
+1. subscribe(event, callback) → Saves the callback function in memory for that event.
+
+2. publish(event, data) → Finds all callbacks for that event and calls them, passing data.
+
+*/

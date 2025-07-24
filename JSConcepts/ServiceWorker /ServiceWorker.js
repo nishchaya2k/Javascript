@@ -19,5 +19,4 @@
 
 4. Handling Events: Once active, the Service Worker can then handle functional events like fetch (intercepting network requests), push (receiving push messages), and sync (performing background synchronization).
 
-
 */

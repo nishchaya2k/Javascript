@@ -27,30 +27,27 @@
     
     - You **cannot directly store objects** in local storage.  
     For example, this won't work correctly:
-    ```javascript
-    localStorage.setItem("user", {name: "nishchaya"}); // WRONG
-    ````
+
+    - localStorage.setItem("user", {name: "nishchaya"}); // WRONG
+   
     
     - Instead, you need to convert the object to a string using `JSON.stringify`:
     
-    ```javascript
+
     localStorage.setItem("user", JSON.stringify({name: "nishchaya"}));
-    ```
+    
     
     And to retrieve and use it again as an object, you must parse it back:
     
-    ```javascript
     const user = JSON.parse(localStorage.getItem("user"));
     console.log(user.name); // Output: nishchaya
-    ```
     
     Functions for LocalStorage:
     
-    * `localStorage.setItem(key, value)` → Store data
-    * `localStorage.getItem(key)` → Retrieve data
-    * `localStorage.removeItem(key)` → Delete a key
-    * `localStorage.clear()` → Clear all data
+    * `localStorage.setItem(key, value)` -> Store data
+    * `localStorage.getItem(key)` -> Retrieve data
+    * `localStorage.removeItem(key)` -> Delete a key
+    * `localStorage.clear()` -> Clear all data
         
 */
 
-        

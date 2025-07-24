@@ -36,7 +36,7 @@ console.log("filter_2", filter_2)
 Array.prototype.myFilter = function (callback) {
     let temp = [];
     for (let i = 0; i < this.length; i++) {
-        if (callback[this[i]]) {
+        if (callback(this[i])) {
             temp.push(this[i])
         }
     }
@@ -475,6 +475,8 @@ console.log("indexOf", MyIndexOf.indexOf(20))
 
 Array.prototype.myIndexOf = function (value) {
 
+    //handle edge case??
+    
     for (let i = 0; i < this.length; i++) {
         if (this[i] == value) return i;
     }
@@ -513,9 +515,77 @@ Array.prototype.myFill = function (value, start = undefined, end = undefined) {
 console.log("fill", Fill.myFill(false, 1, -1), Fill)
 
 
+// 26. copyWithin(): method copies array elements to another position in an array,method overwrites the existing values, method does not add items to the array.
+
+
+let CopyWithin = [1, 2, 12, 32, 123];
+
+console.log("copyWithIn", CopyWithin.copyWithin(2, 0, 0))
+
+Array.prototype.myCopyWithIn = function (target, start = undefined, end = undefined) {
+    if (start === undefined && end === undefined) return this;
+
+    let endIndex = end !== undefined ? (end < 0 ? this.length + end : end) : this.length;
+    let startIndex = start !== undefined ? (start < 0 ? this.length + start : start) : 0;
+
+    let temp = [...this]
+
+    for (let i = startIndex; i < endIndex; i++) {
+        if (target >= this.length) return this;
+        this[target] = temp[i];
+        target++;
+    }
+
+    return this;
+}
+
+
+console.log("copyWithIn", CopyWithin.myCopyWithIn(3, 0, 0))
+
+
+// 27. findLast: Returns the last element that satisfies the condition, otherwise undefined, Required a function to run for each array element & a value of the current element.
+
+let FindLast = [1, 2, 3, 4, 4];
+
+console.log("findLast", FindLast.findLast((val) => val > 3))
+
+Array.prototype.myFindLast = function (cb) {
+    if (typeof cb !== 'function') throw new TypeError(`${cb} is not a function`)
+
+    for (let i = this.length - 1; i >= 0; i--) {
+        if (cb(this[i])) return this[i];
+    }
+
+    return undefined;  // Return undefined if no element satisfies the condition
+}
+
+console.log("findLast", FindLast.myFindLast((val) => val > 3))  // Output: 4
+
+
+//28.  toReversed() method reverses the order of the elements in an array., method does not overwrites the original array, it returns the new array
+
+let ToReversed = [1, 2, 3, 4, 2, 4];
+console.log("toReversed", ToReversed.toReversed(), ToReversed)
+
+Array.prototype.myToReversed = function () {
+    if (!Array.isArray(this)) {
+        throw new TypeError("not an array");
+    }
+
+    let temp = [];
+
+    for (let i = this.length - 1; i >= 0; i--) {
+        temp.push(this[i]);
+    }
+    return temp;
+};
+
+console.log("toReversed", ToReversed.myToReversed(), ToReversed)
 
 
 
-//28. 
+
+
+
 
 

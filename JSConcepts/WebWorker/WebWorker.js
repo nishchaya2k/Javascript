@@ -12,7 +12,7 @@ const bgButton = document.querySelector('#bgButton');
 
 sumButton.addEventListener("click", (event) => {
     let sum = 0;
-    for (let i = 0; i < 100000; i++) {
+    for (let i = 0; i < 1000000000000; i++) {
         sum += i;
     }
     alert(`The final sum is ${sum}`);

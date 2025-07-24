@@ -7,6 +7,7 @@
 */
 
 // Worker script example:
+console.log(this)
 onmessage = function (message) {
     let sum = 0;
     for (let i = 0; i < 10000000000; i++) {
@@ -15,3 +16,8 @@ onmessage = function (message) {
     postMessage(sum);  // Send result back to main thread
     // console.log(message) // message received from main thread
 }
+
+
+
+
+//analytics of Ecommerce website, to track data eg. how many times users visit on that sit
