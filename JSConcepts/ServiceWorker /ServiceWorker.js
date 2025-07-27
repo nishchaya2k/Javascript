@@ -9,8 +9,6 @@ Think of it as a middle layer between the browser and the network/server that ca
 4. Sync data in the background when connectivity is restored 
 5. You want your app to work offline or have "offline-first" features.
 6. Caches previously visited pages, even if they are offline
-7. 
-
 
 
 - When to Avoid 

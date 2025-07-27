@@ -117,8 +117,6 @@
         - **idb** from Google (minimal and clean)
     - You can also manually promisify IDB with `async/await` using `new Promise()`.
 
-
-
 */
 
 
@@ -138,26 +136,26 @@ openRequest.onsuccess = (e) => {
     // Example operations — uncomment any one at a time:
 
     // Insert or update data (put will insert if new, or update if existing)
-    // let request = storeObject.put({ id: 10, name: 'narulas', email: 'narulas@gmail.com' });
+    // let request = storeObject.put({ id: 11, name: 'narulas1', email: 'narula1s@gmail.com' });
 
     // Get a record by key (e.g., id = 9)
-    // let request = storeObject.get(9);
+    // let request = storeObject.get(11);
 
     // Get all records
     // let request = storeObject.getAll();
 
     // Get records in range (inclusive): between ID 9 and 10
-    // let request = storeObject.getAll(IDBKeyRange.bound(9, 10));
+    // let request = storeObject.getAll(IDBKeyRange.bound(9, 11));
 
     // Get just the key of record with ID 9
-    // let request = storeObject.getKey(9);
+    // let request = storeObject.getKey(0);
 
     // Use an index to query by non-primary key (e.g., name = 'narulas')
     // let index = storeObject.index("name");
     // let request = index.get('narulas');
 
     // Delete a record by ID
-    // let request = storeObject.delete(9);
+    let request = storeObject.delete(11);
 
     // You must define request to avoid errors below
     // Handle success or error for the operation (if one is active)
@@ -176,7 +174,7 @@ openRequest.onsuccess = (e) => {
 openRequest.onupgradeneeded = (e) => {
     console.log("Upgrade needed");
 
-    let db = openRequest.result;
+    let db = openRequest.result; // holds the actual database instance 
 
     // Create "students" object store only if it doesn't exist
     if (!db.objectStoreNames.contains("students")) {
@@ -250,6 +248,8 @@ openRequest.onerror = (e) => {
     → Use Case: Secure storage of sensitive data locally (with encryption).
     → Example: Password manager storing vault locally before syncing.
     → Why IndexedDB: Not easily accessible like localStorage (can't just open in devtools), can encrypt and manage structured data.
+
+11. On Page refresh data will be retained
 */
 
 
