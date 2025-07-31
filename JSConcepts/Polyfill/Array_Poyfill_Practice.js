@@ -582,7 +582,7 @@ Array.prototype.myToReversed = function () {
 
 console.log("toReversed", ToReversed.myToReversed(), ToReversed)
 
-
+//29. 
 
 
 
