@@ -46,18 +46,19 @@ Cookies are small pieces of data stored on a user’s web browser. They are used
 
 6. User Control: Users may not have complete control over cookies, and managing them might be challenging for non-technical users. This lack of transparency can contribute to privacy concerns.
 
-
-
-
-
-
-
-
-
-
-
-
-
 */
 
 
+/*
+
+- Cookies vs Local Storage: Cookies and local storage are both used to store data on the client’s side in web applications, but they serve different purposes and have different characteristics:
+
+1. Storage Size: Local storage can hold more data compared to cookies.
+2. Lifespan: Cookies can be set to expire; local storage data stays until it is cleared.
+3. Server Interaction: Cookies are sent with every request to the server, whereas local storage data stays on the client-side.
+4. Scope: Cookies are accessible by both client and server; local storage is strictly client-side.
+
+
+In summary, cookies are better suited for smaller amounts of data that need to be sent to the server with each request, while local storage is more appropriate for storing larger amounts of data that don’t need to be sent to the server and should persist beyond the session.
+
+*/
