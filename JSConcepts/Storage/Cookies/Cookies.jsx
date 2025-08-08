@@ -46,6 +46,10 @@ Cookies are small pieces of data stored on a user’s web browser. They are used
 
 6. User Control: Users may not have complete control over cookies, and managing them might be challenging for non-technical users. This lack of transparency can contribute to privacy concerns.
 
+7. Browsers are generally limited to a maximum number of cookies per domain (varies by browser, generally in the hundreds), and a maximum size per cookie (usually 4KB). Storage APIs can store larger amounts of data.
+
+8.Cookies are sent with every request, so they can worsen performance (for example on slow mobile data connections), especially if you have a lot of cookies set.
+
 */
 
 
