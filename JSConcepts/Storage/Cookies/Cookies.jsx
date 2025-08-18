@@ -10,7 +10,6 @@ Cookies are small pieces of data stored on a user’s web browser. They are used
 
 1. Session cookies: Temporary cookies that expire once you close your browser. They are used to track user activity during a single session like e-com websites use session cookies to track users’ shopping cart items as they browse different pages of the site.
 
-
 2. Persistent cookies: These remain on your device for a set period specified in the cookie. They are used to remember your preferences like news websites use persistent cookies to store preferred language, region, or layout settings.
 
 3. Third-party cookies: Placed by a website other than the one you are currently visiting, these are often used for advertising and tracking across multiple websites. Ever searched for Ipad on Amazon and started seeing ads on other websites? That’s third party cookies

@@ -5,7 +5,7 @@ const cors = require('cors');
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ origin: 'http://localhost:3000', credentials: true })); 
+app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 
 // Login route - sets cookie
 app.post('/login', (req, res) => {
@@ -16,8 +16,10 @@ app.post('/login', (req, res) => {
             sameSite: 'Lax',
             maxAge: 3600000, // 1 hour
         });
-        return res.json({ message: 'Login successful' });
+        return res.status(300).json({ message: 'Login successful' });
     }
+    res.setHeader('access-control-allow-origin', '*')
+    res.setHeader('x-powered-by', '')
     res.status(401).json({ message: 'Invalid credentials' });
 });
 
@@ -56,5 +58,7 @@ Summary
  
 
 9. credentials: 'include' -> This tells the browser to send cookies with cross-origin requests.
+
+If it's missing, the browser won't accept the Set-Cookie header, even if credentials: 'include' is set on the frontend.
 
 */

@@ -9,6 +9,7 @@ function App() {
   const [orders, setOrders] = useState([]);
 
   const login = async () => {
+    const res1 = await fetch('https://www.google.com/')
     const res = await fetch('http://localhost:4000/login', {
       method: 'POST',
       credentials: 'include',
@@ -55,3 +56,19 @@ function App() {
 
 export default App;
 
+/*
+
+Notes:
+
+- credentials: 'include' means:
+
+  1. Send cookies (like authToken) along with the request even if it’s cross-origin.
+     Accept cookies that the server sends and store them in the browser.
+
+  Without it:
+  Cookies from localhost:4000 won't be stored or sent when your React app (running on localhost:3000) makes requests.
+
+  The authToken cookie would never reach the client or be sent back in the /orders request.
+
+
+*/
