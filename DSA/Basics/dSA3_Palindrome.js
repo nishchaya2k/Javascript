@@ -5,25 +5,20 @@ A palindrome is a number that reads the same backward as forward. For example, 1
 */
 
 
-let n = 4554;
+let n = 4314;
 
 function palindrome(n) {
-    if (!n || n < 10) return true;
+    if (n < 0) return false
 
-    // Remove trailing zeros
-    while (n && (n % 10 === 0)) {
-        n = Math.floor(n / 10);
-    }
-
+    let original = n;
     let rev = 0;
 
-    // Reverse the digits
     while (n) {
         rev = rev * 10 + (n % 10);
         n = Math.floor(n / 10);
     }
 
-    return rev === n;
+    return rev == original;
 
 }
 
