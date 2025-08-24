@@ -6,7 +6,28 @@ If there are k elements after removing the duplicates, then the first k elements
 Note: Return k after placing the final result in the first k slots of the array.
 */
 
-let arr = [1, 1, 2, 2, 2, 3, 3];
+let arr = [1, 1, 1, 2, 2, 3, 3, 3, 3, 4, 4, 5, 5, 5, 6, 6, 7, 8, 8];
 
 
+// Approach 1: Two Pointers
 
+function remove_duplicates_inplace(arr) {
+    if (arr.length === 0) return 0;
+
+
+    let j = 1;
+    let i = 0;
+
+    while (j < arr.length) {
+        if (arr[i] != arr[j]) {
+            arr[i + 1] = arr[j];
+            i++;
+        }
+
+        j++;
+    }
+
+    return i + 1;
+}
+
+console.log("Remove Duplicates", remove_duplicates_inplace(arr))
