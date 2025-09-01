@@ -1,11 +1,13 @@
-const express = require('express');
-const cookieParser = require('cookie-parser');
-const cors = require('cors');
+import express from 'express';
+import { WebSocketServer } from 'ws'
+import cookieParser from 'cookie-parser';
+import cors from 'cors'
 
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
+const port = 4000;
 
 // Login route - sets cookie
 app.post('/login', (req, res) => {
@@ -33,7 +35,15 @@ app.get('/orders', (req, res) => {
     res.status(401).json({ message: 'Unauthorized' });
 });
 
-app.listen(4000, () => console.log('Server running on http://localhost:4000'));
+const server = app.listen(port, () => console.log('Server running on http://localhost:4000'));
+
+const wss = new WebSocketServer({ server })
+wss.on("connection", (ws) => {
+    ws.on("message", (data) => {
+        console.log("Data from client", data)
+        ws.send("Sent")
+    })
+})
 
 
 /*

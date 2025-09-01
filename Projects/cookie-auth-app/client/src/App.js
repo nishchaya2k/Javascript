@@ -9,7 +9,6 @@ function App() {
   const [orders, setOrders] = useState([]);
 
   const login = async () => {
-    const res1 = await fetch('https://www.google.com/')
     const res = await fetch('http://localhost:4000/login', {
       method: 'POST',
       credentials: 'include',
