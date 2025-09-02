@@ -7,21 +7,26 @@ All occurrences of a character must be replaced with another character while pre
 */
 
 
-let s = "ab"
-let t = "aa"
+let s = "aa"
+let t = "ac"
 
 
 function isomorphicCheck(s, t) {
     if (s.length !== t.length) return false;
 
     let i = 0;
-    let consumed = {};
+    let consume = {};
+    let alreadyTaken = {};
 
     while (i < s.length) {
-        if (!consumed[s[i]]) {
-            consumed[s[i]] = t[i]
+        if (!consume[s[i]]) {
+
+            if (alreadyTaken[t[i]]) return false;
+
+            consume[s[i]] = t[i]
+            alreadyTaken[t[i]] = true;
         }
-        if (consumed[s[i]] && consumed[s[i]] != t[i]) return false
+        if (consume[s[i]] && consume[s[i]] != t[i]) return false
         i++;
     }
     return true;
