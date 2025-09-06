@@ -1,1 +1,1 @@
-ACT
+    console.log(arr)
