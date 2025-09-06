@@ -13,9 +13,12 @@ let s = "mrnhanga", goal = "nganhamr"
 
 //Approach 1
 
-function rotateString(s, goal) {
+function rotateString1(s, goal) {
+
+    if (s.length !== goal.length) return false;
 
     let n = s.length;
+
 
     for (let i = 0; i < n; i++) {
         if (s[i] == goal[0] && s[n - 1] == goal[n - 1 - i]) {
@@ -47,4 +50,37 @@ function rotateString(s, goal) {
     return false;
 }
 
-console.log("is String Can be Rotated", rotateString(s, goal))
+console.log("is String Can be Rotated", rotateString1(s, goal))
+
+
+//Approach 2
+
+
+function rotateString2(s, goal) {
+    if (s.length !== goal.length) return false;
+
+    let n = s.length;
+
+    if ((s + s).includes(goal)) return true;
+
+    return false;
+}
+
+console.log("is String Can be Rotated", rotateString2(s, goal))
+
+
+//Approach 3
+
+
+function rotateString2(s, goal) {
+    if (s.length !== goal.length) return false;
+
+    let n = s.length;
+
+
+    for (let i = 0; i < n; i++){
+        
+    }
+}
+
+console.log("is String Can be Rotated", rotateString2(s, goal))
