@@ -1,1 +1,1 @@
-    console.log(arr)
+            if (freq[str[end]] < min) {
