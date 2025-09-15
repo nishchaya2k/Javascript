@@ -18,7 +18,7 @@
    Benefits:
    a. Faster browsing (no need to query root, TLD, authoritative servers again)
    b. Reduced DNS traffic on the internet
-   c. Lower latency for end-users
+   c. Lower latency(delay) for end-users
    d. Less load on authoritative DNS servers
 
 - 🔹 What if a Domain's IP Changes?
