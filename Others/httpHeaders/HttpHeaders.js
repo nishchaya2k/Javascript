@@ -2,14 +2,14 @@
 - 🔹 HTTP Headers: They carry meta-data for API requests and responses, influencing how the server processes requests and how the client handles responses.
 
 - 🔹 Key Characteristics:
-  - **Key-Value Pairs**: Headers are sent as key-value pairs, conveying important information like content type, authentication, and caching.
-  - **Separate from Body**: Headers contain meta-data, while the body carries the actual content.
-  - **Text-based**: Headers are plain-text, human-readable information.
+  - Headers are sent as key-value pairs, conveying important information like content type, authentication, and caching.
+  - Headers contain meta-data, while the body carries the actual content.
+  - Headers are plain-text, human-readable information.
 
 - 🔹 Why They’re Important:
-  - **Control Behavior**: Headers define how requests/responses are processed (e.g., `Content-Type`, `Cache-Control`).
-  - **Security**: Headers manage authentication (e.g., `Authorization`) and session data (e.g., `Set-Cookie`).
-  - **Content Negotiation**: Headers help the client and server agree on formats (e.g., `Accept`).
+  - Headers define how requests/responses are processed (e.g., `Content-Type`, `Cache-Control`).
+  - Security: Headers manage authentication (e.g., `Authorization`) and session data (e.g., `Set-Cookie`).
+  - Content Negotiation: Headers help the client and server agree on formats (e.g., `Accept`).
 
 - 🔹 Examples:
   Request Headers:
