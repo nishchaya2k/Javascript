@@ -11,6 +11,7 @@
 - 🔹 Use Cases:
 1.  Devs use it to understand server environment.
 2.  Can be stripped or masked for security (via proxies or configs).
+3.  Server may have flaws and hacker can try to attack basis of software are being used
 
 - 🔹 Security Note:
 1.  Revealing server versions may aid targeted attacks.
@@ -168,7 +169,7 @@
 2.  Helps with **cache validation**.
 3.  Example:
     ETag: "686897696a7c876b7e"
-4.  Real Life: Like a **QR code on a document**. If the browser still has the same version, it skips re-downloading it. Saves bandwidth!
+4.  Real Life: Like a **QR code on a document**. If the browser still has the same version, it skips re-downloading it. Saves bandwidth!, will update the cache acc. to etag as to avoid storing stale data
 
 
 - 🔹 Use With:

@@ -45,7 +45,7 @@
     So the ad site knows the visitor came from that YouTube video.
 
 - Use Cases:
-  Analytics, traffic source tracking.
+  Analytics, traffic source tracking., records of data from where we are getting responses
 
 - Privacy:
   May be omitted or truncated to protect user privacy.
@@ -60,6 +60,7 @@
     User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 ...
 3. Real Life:
     When you visit a site on Chrome/Windows, this header tells the server your browser & OS, allowing tailored content or bug fixes.
+    eg. Streaming platforms -> ??? send data ac.. to resolution
 
 - Use Cases:
   Device detection, browser-specific rendering.
@@ -123,9 +124,10 @@
 - 🔹 Cache-Control Header:
 
 1. What it does: Controls **how the client handles caching** of responses.
-2. Example:
-    Cache-Control: no-cache
-3. Real Life:
+2. Maximum age : 
+3. Example:
+    Cache-Control: no-cache;max-age=3600
+4. Real Life:
     Your browser says, “Don’t use cached content; check with the server for fresh data.”
     Useful to avoid stale pages.
 
