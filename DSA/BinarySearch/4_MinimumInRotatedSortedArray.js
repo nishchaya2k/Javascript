@@ -4,7 +4,7 @@ Problem Statement: Given an integer array arr of size N, sorted in ascending ord
 */
 
 // let arr = [4, 5, 6, 7, 0, 1, 2, 3];
-let arr = [4, 5, 6, 7, 8,9];
+let arr = [4, 5, 6, 7, 8, 9];
 // let arr = [1];
 let min = Number.MAX_SAFE_INTEGER;
 
@@ -21,7 +21,7 @@ function minimumElement1(arr, min) {
 
         let mid = Math.floor((start + end) / 2);
 
-        min = Math.min(min,arr[mid], arr[start], arr[end]);
+        min = Math.min(min, arr[mid], arr[start], arr[end]);
 
         if (arr[start] <= arr[mid]) {
             start = mid + 1
@@ -61,6 +61,32 @@ var minimumElement2 = function (nums) {
 
 console.log("Minimum in Rotated Sorted Array", minimumElement2(arr, min))
 
+
+//Approach 3, Most Simple and Effective
+
+var minimumElement3 = function (arr,min) {
+
+    let start = 0;
+    let end = arr.length - 1;
+
+    while (start <= end) {
+        let mid = Math.floor((start + end) / 2);
+
+        if (arr[start] <= arr[end]) {
+            if (arr[start] < min) min = arr[start];
+            start = mid + 1;
+        } else {
+            if (arr[mid] < min) min = arr[mid];
+            end = mid - 1;
+        }
+    }
+
+    return min;
+
+}
+
+
+console.log("Minimum in Rotated Sorted Array", minimumElement3(arr, min))
 
 /*
 
