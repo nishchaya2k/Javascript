@@ -21,3 +21,12 @@ var maxSubArray = function (nums) {
 };
 
 console.log("Maximum SubArray", maxSubArray(nums))
+
+
+/*
+Pattern:
+
+1. even and odd indexes have same values in left side when single element is at odd index
+2. odd and even indexes have same values in right when single element is at even even index
+
+*/
