@@ -2,10 +2,17 @@
 - 🔹 GraphQL:
 
 1. GraphQL is a query language for APIs that allows clients to request exactly the data they need.
-2. It uses a single endpoint (typically /graphql) to handle all types of data requests.
+
+2. All data operations—queries, mutations, and subscriptions—are sent through a single endpoint (commonly /graphql), simplifying API access.
+
+3. Unlike REST, where you might use GET /users to fetch users and POST /users to create a user, GraphQL handles both through a single endpoint using the request body to define the operation—no need for multiple URLs or different HTTP methods.
+
 3. GraphQL APIs are strongly typed and defined by a schema.
+
 4. Clients define the structure of the response, avoiding over-fetching or under-fetching.
+
 5. Supports both querying (reading) and mutations (writing/updating data).
+
 6. Designed to be flexible, efficient, and developer-friendly.
 
 - 🔹 Why we need it?

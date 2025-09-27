@@ -1,68 +1,39 @@
+// server/index.js
 const express = require("express");
 const { ApolloServer } = require("@apollo/server");
 const { expressMiddleware } = require("@as-integrations/express4");
 const cors = require("cors");
-const axios = require("axios");
+
+// Swap between schema1 and schema2 by commenting one out
+// const { typeDefs, resolvers } = require("./graphql/schema1");
+const { typeDefs, resolvers } = require("./graphql/schema2");
 
 async function startServer() {
     const app = express();
 
     const server = new ApolloServer({
-        typeDefs: `
-            type User{
-                id: ID!
-                name: String!
-                username: String!
-                email: String!
-                phone: String!
-                website: String!
-
-            }
-            type Todo {
-                id: ID!
-                title: String!
-                completed: Boolean
-            }
-
-            type Query {
-                getTodos: [Todo]
-                getAllUsers: [User]
-            }
-        `,
-        resolvers: {
-            Query: {
-                getTodos: async () => (await axios.get(
-                    "https://jsonplaceholder.typicode.com/todos"
-                )).data,
-                getAllUsers: async () => (await axios.get(
-                    "https://jsonplaceholder.typicode.com/users"
-                )).data
-            },
-
-            // getTodos: () => [
-            //     { id: 1, title: "Something Something", completed: false }
-            // ]
-        },
-    },
-    );
+        typeDefs,
+        resolvers,
+    });
 
     await server.start();
 
     app.use(
         "/graphql",
-        cors(), // Enable CORS for cross-origin requests
-        express.json(), // Parse incoming JSON requests (req.body)
+        cors(),
+        express.json(),
         expressMiddleware(server, {
-            context: async ({ req, res }) => ({}), // Optional shared context for resolvers
+            context: async ({ req }) => ({}),
         })
     );
 
     app.listen(8000, () =>
-        console.log("🚀 Server started at http://localhost:8000/graphql")
+        console.log("🚀 Server running at http://localhost:8000/graphql")
     );
 }
 
 startServer();
+
 
 /**
  * express                   -> Minimal web framework for Node.js
