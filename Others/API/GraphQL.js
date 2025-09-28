@@ -60,4 +60,6 @@
    - Cleaner, faster, and more efficient for both client and server.
    - Improves frontend performance, especially in mobile and low-bandwidth environments.
    - No need for API versioning — schema can evolve without breaking existing queries.
-*/
+
+3. Security: 
+   */
