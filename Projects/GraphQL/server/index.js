@@ -4,9 +4,9 @@ const { ApolloServer } = require("@apollo/server");
 const { expressMiddleware } = require("@as-integrations/express4");
 const cors = require("cors");
 
-// Swap between schema1 and schema2 by commenting one out
 // const { typeDefs, resolvers } = require("./graphql/schema1");
-const { typeDefs, resolvers } = require("./graphql/schema2");
+// const { typeDefs, resolvers } = require("./graphql/schema2");
+const { typeDefs, resolvers } = require("./graphql/schema3");
 
 async function startServer() {
     const app = express();
