@@ -10,7 +10,7 @@ let n = nums.length
 // Approach 1 -> Take Another Array Put values one by one there
 
 
-// Approach 2 -> Two Pointers
+// Approach 2 -> Two Pointers, O(N)
 function moveZerosToEnd2(nums, n) {
     let i = 0;
     let j = 1;
