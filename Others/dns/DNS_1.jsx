@@ -80,7 +80,7 @@
 2. DNS caching occurs at multiple levels:  Browser Cache, Operating System Cache, Resolver (ISP’s or public DNS resolver) Cache, Intermediate Devices (Routers or proxy servers)
 
 
-- 🔹 DNS Request Flow (Expanded with Routing):
+- 🔹 DNS Request Flow Full Details (Expanded with Routing):
 
 1. **Browser** to **Home Router**:
    - Your browser first checks its local DNS cache. If it doesn't have the IP address, it sends the request to the **Home Router**.

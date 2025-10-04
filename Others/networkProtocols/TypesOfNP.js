@@ -48,15 +48,24 @@ Here are the main types:
    When you load a website like http://example.com, your browser uses HTTP to fetch the page content.
 
 5. HTTPS (HTTP Secure)
-   - It enables user to request and access web pages, download files and, interact with web applications. 
-   - HTTP defines how information is formatted, transmitted, and displayed on the web
-   - Secure version of HTTP.
-   - Uses SSL/TLS to encrypt data between browser and server, what ?.
-   - Ensures confidentiality, integrity, and authentication.
-   - small size data sets
+   - Secure version of HTTP used for web communication.
+   - Enables users to access web pages, download files, and interact with applications securely.
+   - Protects data from eavesdropping, tampering, and forgery.
+   - Uses SSL/TLS to encrypt data between browser and server.
+     - SSL (Secure Sockets Layer) and TLS (Transport Layer Security) are encryption protocols.
+     - TLS is the modern and secure replacement for SSL (SSL is deprecated).
+     - They perform a "handshake" to establish a secure session.
+     - Ensure:
+         1. Confidentiality – Data is encrypted.
+         2. Integrity – Data is not altered in transit.
+         3. Authentication – Confirms the server's identity.
+     - HTTPS runs on TCP port 443.
+
+   - Typically used for login pages, payments, and confidential web activity.
+   - Data is usually small to medium size.
 
    Example:
-   Used on websites that require secure login or payment, like https://bank.com.
+   Used on secure websites like https://bank.com.
 
 6. FTP (File Transfer Protocol)
    - Network protocol Used for tranferring files between devices over a network 
