@@ -1,1 +1,1 @@
-    console.log(missing, k, arr[i - 1], i)
+//Approach 2, Optimal, TC: O(nlogn)
