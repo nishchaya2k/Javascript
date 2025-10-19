@@ -1,1 +1,1 @@
-min
+dayWeight + weights[i]
