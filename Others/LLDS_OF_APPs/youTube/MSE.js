@@ -32,8 +32,49 @@
      - Browser handles decoding + rendering.
 
 
+- 🔹 Additional Notes on Flash, RTMP, and Browser API (Extension)
+  1. Flash Player Plugin:
+     - Flash Player was a third-party plugin developed by Adobe.
+     - It allowed browsers to play video/audio content before HTML5 video was standardized.
+     - Users had to install it manually (it was not part of the browser by default).
+     - YouTube used Flash Player in the 2000s to stream videos.
+     - Downsides:
+       - Security vulnerabilities
+       - High CPU usage
+       - Poor mobile support
+     - Modern browsers (Chrome, Firefox, Edge, Safari) have **dropped support** for Flash by 2020.
+  
+  2. RTMP (Real-Time Messaging Protocol):
+     - Developed by Adobe for streaming audio, video, and data over the internet.
+     - Worked mainly with Flash Player.
+     - Features:
+       - Low-latency streaming
+       - Maintained connection between client and server
+     - Limitations:
+       - Not firewall-friendly (used TCP port 1935)
+       - Required plugin support (Flash)
+       - Poor mobile device compatibility
+     - Current Usage: Almost obsolete in web browsers; replaced by HTTP-based streaming protocols (HLS/DASH) with MSE.
 
+  3. Browser API:
+     - API = Application Programming Interface
+     - Browser APIs allow JavaScript to **interact with the browser** to perform actions like:
+       - Manipulating DOM
+       - Fetching data
+       - Controlling video/audio playback (like MSE)
+     - MSE is a browser API that provides **direct access to media buffers**, letting JavaScript manage video segments dynamically.
+     - Difference from Flash:
+       - Flash handled decoding and rendering inside a plugin
+       - MSE allows the **browser itself** to decode/render, no plugin needed
 
-
-
+  4. Evolution to MSE:
+     - Before HTML5 + MSE:
+       - YouTube → Flash Player + RTMP
+       - Pros: Worked for the desktop web, adaptive streaming possible via RTMP
+       - Cons: Security issues, plugin requirement, poor mobile support
+     - After HTML5 + MSE:
+       - YouTube → HTTP-based streaming (HLS/DASH) + MSE
+       - Pros: Works on all modern devices, adaptive bitrate, secure, CDN-friendly
+       - Browser handles decoding and rendering
+       - JavaScript handles fetching and appending chunks
 */
