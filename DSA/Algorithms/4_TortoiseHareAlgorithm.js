@@ -1,3 +1,7 @@
+/*
+Tortoise and Hare Algorithm (Floyd’s Cycle Detection)
+*/
+
 const { llCreate } = require("../LinkedList/1_InsertAtHeadLinkedList");
 
 let head = llCreate([1, 2, 3])
