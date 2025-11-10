@@ -131,6 +131,10 @@ Security (DRM, Auth)
 1. Quic, HLS, Dash Protocols
 2. MSE, Buffer, Blob
 
+- Nov 15
+
+1. MSE Code 
+2. Payment Gateway
 
 Streaming terminology includes essential terms that describe the process and components of delivering multimedia content over the internet. 
 
