@@ -11,7 +11,7 @@ let ll2 = llCreate([0])
 
 
 //Approach 1, inplace Addition
-function addTwoNumbers1(ll1, ll2) {
+function addTwoNumbers(ll1, ll2) {
     let head = ll2;
     let carry = 0;
 
@@ -42,37 +42,4 @@ function addTwoNumbers1(ll1, ll2) {
     return head
 }
 
-console.log("Add Two Numbers", addTwoNumbers1(ll1, ll2))
-
-//Approach 2, New LL 
-function addTwoNumbers2(l1, l2) {
-    let linkedString1 = "";
-    let linkedString2 = "";
-
-    while (l1) {
-        linkedString1 = l1.data + linkedString1;
-        l1 = l1.next;
-    }
-
-    while (l2) {
-        linkedString2 = l2.data + linkedString2;
-        l2 = l2.next;
-    }
-
-    const total = String(BigInt(linkedString1) + BigInt(linkedString2))
-        .split('')
-        .reverse()
-        .join('');
-
-    let dummy = new ListNode(0);
-    let linkedResult = dummy;
-
-    for (let current of total) {
-        linkedResult.next = new ListNode(Number(current));
-        linkedResult = linkedResult.next;
-    }
-
-    return dummy.next;
-}
-
-console.log("Add Two Numbers", addTwoNumbers2([1, 8], [0]))
+console.log("Add Two Numbers", addTwoNumbers(ll1, ll2))
