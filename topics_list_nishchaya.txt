@@ -1,0 +1,82 @@
+JavaScript Topics Covered
+
+1. Prototypes
+2. Constructor Function
+3. Classes
+4. Promises
+5. Promise API (All, AllSettled, Any, Race)
+6. Async/Await
+7. Callbacks
+8. Callback Hell
+9. Fetch API
+10. Closure
+11. Currying
+12. Call, Bind, Apply
+13. Hoisting
+14. Variables (var, let, const)
+15. Scopes
+16. Temporal Dead Zone (TDZ)
+17. Variable Shadowing
+18. Global Execution Context (GEC)
+19. Functions (IIFE)
+20. Objects
+21. Deep Copy
+22. OOP (Object-Oriented Programming)
+23. Abstraction
+24. Encapsulation
+25. Inheritance
+26. Polymorphism
+27. Event Propagation
+28. Event Bubbling
+29. Event Capturing
+30. Event Delegation
+31. Event Emitter
+32. Debouncing
+33. Throttling
+34. Memoization
+35. Storage (Local Storage, Session Storage)
+36. Cookies
+37. IndexedDB
+38. Web APIs
+39. AbortController
+40. IntersectionObserver
+41. MutationObserver
+42. ResizeObserver
+43. SetTimeout
+44. SetInterval
+45. Web Workers
+46. Service Workers
+47. Browser Architecture
+48. Value & References (Pass by Value/Reference)
+49. Polyfills
+50. Array Methods Polyfills
+51. String Methods Polyfills
+52. Promise Methods Polyfills
+53. REST API
+54. GraphQL
+55. HTTP
+56. HTTP Headers
+57. Request Headers
+58. Response Headers
+59. DNS
+60. Docker
+61. gRPC
+62. Protocol Buffers
+63. Communication between Machines
+64. WebSockets
+65. WebHooks
+66. Server-Sent Events (SSE)
+67. Long Polling
+68. Short Polling
+69. Load Balancer
+70. Network Protocols
+71. Pagination (Offset, Cursor)
+72. Virtualization
+73. System Design
+74. Performance Optimization
+75. Caching
+76. Security
+77. Internationalization (i18n) & Localization (L10n)
+78. Network Optimization
+79. Rendering & Accessibility
+
