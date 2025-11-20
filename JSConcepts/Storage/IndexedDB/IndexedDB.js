@@ -250,6 +250,11 @@ openRequest.onerror = (e) => {
     → Why IndexedDB: Not easily accessible like localStorage (can't just open in devtools), can encrypt and manage structured data.
 
 11. On Page refresh data will be retained
+
+12. Think of IndexedDB like a library
+   - The database = the whole library
+   - An object store = a bookshelf
+   - A transaction = permission to do something (read or write) in the library
 */
 
 
@@ -263,4 +268,26 @@ openRequest.onerror = (e) => {
 2. For temporary data across tabs → sessionStorage may be enough.
 3. For real-time data sync only → Consider WebSocket or server-side storage.
 4. If your app doesn't require structured data or offline features.
+*/
+
+
+/**
+IndexedDB Key Methods:
+
+createObjectStore()
+- Used only during onupgradeneeded
+- Creates a new object store (like adding a new table/shelf)
+
+transaction()
+- Called on the database (db)
+- Opens a read or read/write session required for any operation
+
+objectStore()
+- Called on the transaction (tx)
+- Gives access to a specific object store to add/get/update/delete data
+
+Flow:
+createObjectStore → creates storage
+transaction → opens permission
+objectStore → accesses storage
 */
