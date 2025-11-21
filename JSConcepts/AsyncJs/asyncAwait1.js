@@ -7,6 +7,8 @@ async function sayHello() {
     return "Hello";
 }
 
+console.log("Test", sayHello)
+
 sayHello().then(console.log); // Output: Hello
 
 sayHello().then((result) => {
@@ -22,7 +24,7 @@ async function fetchData() {
     });
 }
 
-fetchData().then(console.log); 
+fetchData().then(console.log);
 
 
 

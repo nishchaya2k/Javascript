@@ -7,6 +7,9 @@ What is Await?
 -> await is a keyword that can only be used inside async function
 -> what is async operation: 
 -> if you return a promise its fine but if you return a value it will wrap up in a promise and return a promise eventually
+
+
+- async and await are keywords in programming that allow developers to write asynchronous code in a way that resembles synchronous code, making it easier to read and manage. The async keyword is used to declare a function that will return a promise, and the await keyword is used inside an async function to pause execution until a promise is settled (fulfilled or rejected). 
 */
 
 
@@ -29,15 +32,15 @@ data.then((res) => console.log(res))
 
 //Example 2 -> Promise produce
 
-const p1 = new Promise((resolve, reject) => {   
+const p1 = new Promise((resolve, reject) => {
     resolve("P1 Promise Resolved")
 })
 
 async function handlePromise() {
     // const val = p; storing promise object itself without await rather than resolved value.
     const val = await p;    //pause the execution in the function, untill promise resolves.
-    console.log(val) 
-    console.log("Namaste JavaScript") 
+    console.log(val)
+    console.log("Namaste JavaScript")
 }
 
 handlePromise();
@@ -91,7 +94,7 @@ const p4 = new Promise((resolve, reject) => {
 async function handlePromise() {
     const val = await p4;  //Time: 5 secs
     console.log("Reactjs")
-    console.log(val) 
+    console.log(val)
 
     const val2 = await p3  //Time: 10 secs 
     console.log("JavaScript")
@@ -196,13 +199,13 @@ async function handlePromise() {
         const result = await data.json();
         console.log(result);
     } catch {
-        console.error(err)
+        console.error("err")
     }
 }
 handlePromise();
 
 //async function returns a promsise always
-handlePromise().catch((err) => console.log(err)) 
+handlePromise().catch((err) => console.log(err))
 
 // What to use Async Await or Promise.then/.catch?
 
