@@ -1,1 +1,3 @@
-//Approach 2, Optimal, TC: O(nlogn)
+ let temp = arr[i];
+            arr[i] = arr[index];
+            arr[index] = temp;
