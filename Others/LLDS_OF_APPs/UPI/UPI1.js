@@ -1,5 +1,5 @@
 /*
-Designing a Unified Payments Interface (UPI) system involves creating a robust and secure architecture that enables real-time inter-bank transactions. UPI, managed by the National Payments Corporation of India (NPCI), is a platform that allows seamless fund transfers between bank accounts through mobile devices.
+UPI:  UPI(Unified Payments Interface) is a real-time payment system in India, managed by NPCI, that allows seamless fund transfers between bank accounts using mobile devices. It provides a secure, instant,Concurrent, and interoperable payment platform across banks and service providers.
 
 - 🔹 NPCI: NPCI provides the ecosystem for routing, processing and settlement services to members participating in UPI. NPCI also performs approval of participating PSPs, conducting audits of the PSPs, report generation etc.
 
