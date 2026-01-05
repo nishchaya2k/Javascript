@@ -13,7 +13,7 @@ class Node {
     }
 }
 
-function llCreate(arr) {
+function doublyLLCreate(arr) {
     if (arr.length === 0) return null;
 
     let head = new Node(arr[0]);
@@ -28,19 +28,8 @@ function llCreate(arr) {
     }
 
     // Print the linked list
-
-    let current = head;
-    let output = "";
-
-
-    while (current) {
-        output += current.data + (current.next ? " -> " : " -> null");
-        current = current.next;
-    }
-    // console.log(output);
-
     return head;
 }
-module.exports = { llCreate };
+module.exports = { doublyLLCreate };
 // Example:
 // llCreate([1, 2, 3, 4, 2, 5]);
