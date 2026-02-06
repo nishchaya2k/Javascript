@@ -4,7 +4,7 @@ Generate all binary strings
 Problem Statement: Given an integer n, return all binary strings of length n 
 A binary string is a string consisting only of characters '0' and '1'.
 */
-let n = 0;
+let n = 2;
 
 // Approach 1, TC: O(2^n), SC: O(n)
 function generatAllBinaryStrings(n) {
