@@ -78,3 +78,26 @@ function PeakElement_2(mat) {
 
 console.log("Peak Element", PeakElement_2(mat))
 
+/*
+Algorithm
+- To solve this problem we use the binary search approach.
+
+- The key idea comes from how we find a peak in a 1-D array:
+
+- For any middle position (mid), we check if it’s larger than both its neighbors, if it is, we’ve found a peak.
+
+- If mid is smaller than the element on its left, that means a peak must be somewhere to the left, so we can discard the right half.
+
+- If mid is smaller than the element on its right, then a peak must lie to the right, allowing us to discard the left half.
+
+- This method reduces the number of elements we need to consider in every step, improving efficiency.
+
+For a 2-D array,
+- The search will cover the column range from 0 to col-1, where col is the total number of columns.
+
+- We choose a middle column and identify the row with the largest element in that column.
+
+- We apply similar logic as in 1-D: if this element is bigger than both its side neighbors, we’ve found the peak.
+
+- If the left neighbor is bigger, we only search the left part; if the right neighbor is bigger, we search the right part.
+*/
