@@ -1,4 +1,6 @@
 /*
+Jump Game 2
+
 Problem Statement: You are given a 0-indexed array nums of length n representing your maximum jump capability from each index.
 
 You start at index 0. Each element nums[i] represents the maximum number of steps you can jump forward from index i.
