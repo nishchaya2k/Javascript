@@ -3,9 +3,9 @@ Bubble Sort:
 - Works on the principle of: Push the maximum at last by adjacent swaps
 */
 
-const nums = [13, 46, 24, 52, 20, 9];
+const nums = [13, 46, 24, 52, 20, 9, 0, 1, 0];
 
-function bubbleSort(nums) {
+function bubbleSort_1(nums) {
     let n = nums.length;
 
     // Outer loop for number of passes (n - 1 times)
@@ -28,7 +28,63 @@ function bubbleSort(nums) {
 }
 
 // Print the final sorted array
-console.log("Sorted Array:", bubbleSort(nums));
+console.log("Sorted Array:", bubbleSort_1(nums));
+
+
+
+function bubbleSort_2(nums) {
+    let n = nums.length;
+
+    function reArrange(i, j, nums) {
+
+        if (i >= j || i >= n || j >= n) return
+
+
+        if (nums[i] > nums[j]) {
+            let temp = nums[j];
+            nums[j] = nums[i];
+            nums[i] = temp;
+        }
+
+        reArrange(i, j + 1, nums)
+        reArrange(i + 1, j, nums)
+    }
+
+    reArrange(0, 1, nums)
+    return nums
+
+}
+
+console.log("Recursive", bubbleSort_2(nums))
+
+function bubbleSort_3(nums) {
+    let n = nums.length;
+
+    function reArrange(nums, n) {
+
+        if (n == 1) return;
+        let didSwap = false;
+
+
+        for (let i = 0; i < n - 1; i++) {
+            if (nums[i] > nums[i + 1]) {
+                [nums[i], nums[i + 1]] = [nums[i + 1], nums[i]]
+                didSwap = true
+            }
+        }
+
+        if (!didSwap) return;
+        reArrange(nums, n - 1)
+    }
+
+    reArrange(nums, n)
+    return nums
+
+}
+
+console.log("Recursive", bubbleSort_3(nums))
+
+
 
 /*
 Working Flow:
