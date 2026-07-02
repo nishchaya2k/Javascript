@@ -1,44 +1,90 @@
 /*
-========================
-BINARY SEARCH PATTERNS
-========================
+============================================================
+BINARY SEARCH — MASTER NOTES (REFINED)
+============================================================
+
+Binary Search works when:
+- Search space is MONOTONIC
+- Answer moves in ONE direction
+
+
+============================================================
+1. CORE IDEA
+============================================================
+
+We are not always searching in array.
+
+We are searching in:
+👉 SEARCH SPACE
+
+Condition:
+false false false true true true
+            ↑
+        find boundary
+
+
+============================================================
+2. TYPES OF BINARY SEARCH
+============================================================
+
 
 -----------------------------------
-1. Binary Search on Answer (Min → Max)
+A) Binary Search on Index (Classic)
 -----------------------------------
-Used when:
-- We are NOT searching an index
-- We are searching the BEST / MINIMUM / MAXIMUM possible answer
-- The answer lies in a numeric range [min, max]
-- We can "test" if a candidate answer is valid
 
-Common keywords:
-- "minimize the maximum"
-- "maximize the minimum"
-- "smallest possible"
-- "largest possible"
-- "split", "allocate", "capacity", "days", "workers"
+Use when:
+- Sorted array
+- Find element / position
+
+Example:
+Search in sorted array
+
+Template:
+--------------------------------------------------
+low = 0, high = n - 1
+
+while (low <= high) {
+    mid = Math.floor((low + high) / 2)
+
+    if (arr[mid] === target) return mid
+    else if (arr[mid] < target) low = mid + 1
+    else high = mid - 1
+}
+--------------------------------------------------
+
+
+-----------------------------------
+B) Binary Search on Answer ⭐ (MOST IMPORTANT)
+-----------------------------------
+
+Use when:
+- NOT searching index
+- Searching best possible value
+- Keywords:
+  "minimize maximum"
+  "maximize minimum"
+  "capacity", "days", "workers"
 
 Examples:
-- Split Array Largest Sum
+- Painter's Partition
 - Allocate Books
-- Capacity to Ship Packages in D Days
+- Split Array Largest Sum
 - Koko Eating Bananas
-- Aggressive Cows
+- Ship Packages
+
+Key Idea:
+👉 Try a value → check if possible
+
 
 Steps:
-1. Define search space
-   - low = minimum possible answer
-   - high = maximum possible answer
+1. Define search space:
+   low  = max(arr)
+   high = sum(arr)
 
-2. Write a helper function:
+2. Write helper:
    canWeDo(mid)
-   - returns true/false OR
-   - returns count needed for mid
 
-3. Apply binary search:
-   - if mid is valid → try smaller answer (high = mid - 1)
-   - if mid is invalid → try larger answer (low = mid + 1)
+3. Apply binary search
 
 Template:
 --------------------------------------------------
@@ -47,11 +93,11 @@ high = maxPossible
 ans = high
 
 while (low <= high) {
-    mid = floor((low + high) / 2)
+    mid = Math.floor((low + high) / 2)
 
     if (canWeDo(mid)) {
         ans = mid
-        high = mid - 1
+        high = mid - 1   // try better (smaller)
     } else {
         low = mid + 1
     }
@@ -59,57 +105,47 @@ while (low <= high) {
 return ans
 --------------------------------------------------
 
-Important rule:
-- If we can do it in <= k, it is VALID
-- Always move toward the better (smaller / larger) answer
+
+Example: Painter's Partition
+--------------------------------------------------
+boards = [5,5,5,5], k = 2
+
+low = max = 5
+high = sum = 20
+
+mid = 12 → possible
+mid = 9  → not possible
+mid = 10 → possible ✅
+
+Answer = 10
+--------------------------------------------------
+
+
+Golden Rule:
+👉 If ≤ k works → valid → try smaller
+👉 If > k needed → invalid → increase mid
 
 
 -----------------------------------
-2. Binary Search on Index (Classic)
+C) First / Last Occurrence
 -----------------------------------
-Used when:
-- Array is sorted
-- Searching for an element or its position
 
-Examples:
-- Search in sorted array
-- First / Last occurrence
-- Lower bound / Upper bound
+Use when:
+- Need boundary of target
+
+Key Idea:
+- Do NOT return immediately
 
 Template:
 --------------------------------------------------
-low = 0
-high = n - 1
-
-while (low <= high) {
-    mid = floor((low + high) / 2)
-
-    if (arr[mid] == target) return mid
-    else if (arr[mid] < target) low = mid + 1
-    else high = mid - 1
-}
---------------------------------------------------
-
-
------------------------------------
-3. First / Last Occurrence Pattern
------------------------------------
-Used when:
-- Need first or last position of a target
-
-Key idea:
-- Do NOT return immediately
-- Store answer and continue searching
-
-Template (First Occurrence):
---------------------------------------------------
 ans = -1
-while (low <= high) {
-    mid = floor((low + high) / 2)
 
-    if (arr[mid] == target) {
+while (low <= high) {
+    mid = Math.floor((low + high) / 2)
+
+    if (arr[mid] === target) {
         ans = mid
-        high = mid - 1
+        high = mid - 1   // move left (first)
     } else if (arr[mid] < target) {
         low = mid + 1
     } else {
@@ -121,25 +157,23 @@ return ans
 
 
 -----------------------------------
-4. Binary Search on Condition Change
+D) Binary Search on Condition Change
 -----------------------------------
-Used when:
-- Condition changes from false → true (or vice versa)
-- We want the boundary point
+
+Use when:
+- Condition flips (false → true)
 
 Examples:
 - First bad version
 - Minimum speed
-- Minimum capacity
 
 Pattern:
-- false false false true true true
-- Find first true
+false false false true true
 
 Template:
 --------------------------------------------------
 while (low < high) {
-    mid = floor((low + high) / 2)
+    mid = Math.floor((low + high) / 2)
 
     if (condition(mid)) {
         high = mid
@@ -152,33 +186,77 @@ return low
 
 
 -----------------------------------
-5. Binary Search in Rotated Sorted Array
+E) Rotated Sorted Array
 -----------------------------------
-Used when:
-- Sorted array is rotated
 
-Key idea:
-- One half is always sorted
+Use when:
+- Sorted but rotated
+
+Key Idea:
+👉 One half always sorted
 
 Steps:
-1. Check which half is sorted
-2. Decide where the target lies
-3. Move low / high accordingly
+1. Check sorted half
+2. Check if target lies there
+3. Move accordingly
 
 
------------------------------------
-REMEMBER:
------------------------------------
-- Binary search is NOT only for sorted arrays
-- Binary search works whenever:
-  - Search space is monotonic
-  - Answer moves in one direction
+============================================================
+3. HOW TO IDENTIFY BINARY SEARCH
+============================================================
 
-If:
-- mid works → try better answer
-- mid fails → go opposite direction
+Ask:
 
-========================
-END OF NOTES
-========================
+1) Is answer numeric?
+2) Can I check validity of a guess?
+3) Does answer move in one direction?
+
+If YES → Binary Search on Answer
+
+
+============================================================
+4. COMMON MISTAKES
+============================================================
+
+❌ Wrong search space
+   (start should be max(arr), not 0)
+
+❌ Infinite loop
+   (use correct condition: <= vs <)
+
+❌ Not handling edge cases
+
+❌ Wrong mid:
+   mid = low + (high - low) / 2
+
+
+============================================================
+5. TIME COMPLEXITY
+============================================================
+
+Binary Search:
+O(log(range))
+
+Total:
+O(n * log(range))
+
+
+============================================================
+6. FINAL MENTAL MODEL
+============================================================
+
+Think:
+
+"I am guessing the answer"
+
+If guess works:
+👉 try better
+
+If guess fails:
+👉 go opposite
+
+
+============================================================
+END
+============================================================
 */
