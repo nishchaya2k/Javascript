@@ -29,7 +29,7 @@ function validParenth_1(s) {
 
         if (s[i] === ')')
             return generateSolution(i + 1, count - 1);
-        
+
         return (
             generateSolution(i + 1, count + 1) || // (
             generateSolution(i + 1, count - 1) || // )
@@ -43,26 +43,26 @@ function validParenth_1(s) {
 console.log("Valid Parenthesis", validParenth_1(s))
 
 
-//Approach 1, Recursion, TC: O(3^n), SC: O(n)
+//Approach 2, DP + Recursion, TC: O(n^2), SC: O(n^2)
 function validParenth_2(s) {
     let n = s.length;
+    let dp = Array(n + 1).fill(null).map(() => Array(n + 1))
 
     function generateSolution(i, count) {
 
         //base case
-
-        if (count < 0) return false;
+        if (count < 0) return false;        
         if (i === n)
             return count === 0;
-
+        if (dp[i][count] !== undefined) return dp[i][count]
 
         if (s[i] === '(')
-            return generateSolution(i + 1, count + 1);
+            return dp[i][count] = generateSolution(i + 1, count + 1);
 
         if (s[i] === ')')
-            return generateSolution(i + 1, count - 1);
+            return dp[i][count] = generateSolution(i + 1, count - 1);
 
-        return (
+        return dp[i][count] = (
             generateSolution(i + 1, count + 1) || // (
             generateSolution(i + 1, count - 1) || // )
             generateSolution(i + 1, count)        // empty
