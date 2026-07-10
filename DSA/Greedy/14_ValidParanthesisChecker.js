@@ -51,7 +51,7 @@ function validParenth_2(s) {
     function generateSolution(i, count) {
 
         //base case
-        if (count < 0) return false;        
+        if (count < 0) return false;
         if (i === n)
             return count === 0;
         if (dp[i][count] !== undefined) return dp[i][count]
@@ -75,3 +75,31 @@ function validParenth_2(s) {
 console.log("Valid Parenthesis", validParenth_2(s))
 
 
+//Approach 3, Greedy, TC: O(n), SC: O(1)
+function validParenth_2(s) {
+
+    let n = s.length;
+    let min = 0, max = 0;
+
+    for (let i = 0; i < n; i++) {
+        if (s[i] === '(') {
+            min++;
+            max++;
+        }
+        else if (s[i] === ')') {
+            min--;
+            max--;
+        }
+        else {
+            min--;
+            max++;
+        }
+
+        if (min < 0) min = 0;
+        if (max < 0) return false;
+    }
+
+    return min == 0;
+}
+
+console.log("Valid Parenthesis", validParenth_2(s))
