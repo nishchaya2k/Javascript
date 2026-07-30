@@ -1,6 +1,6 @@
 JavaScript Topics Covered
 
-1. Prototypes
+1. Prototypes 
 2. Constructor Function
 3. Classes
 4. Promises
@@ -79,4 +79,6 @@ JavaScript Topics Covered
 77. Internationalization (i18n) & Localization (L10n)
 78. Network Optimization
 79. Rendering & Accessibility
+80. CSR, SSR
+81. 
 

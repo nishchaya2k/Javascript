@@ -1,5 +1,6 @@
 /*
 - Service Workers: A Service Worker is a type of JavaScript file that runs in the background of your web application, separate from the main browser thread.
+
 Think of it as a middle layer between the browser and the network/server that can intercept and handle network requests — even when the user is offline.
 
 

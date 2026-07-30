@@ -8,72 +8,83 @@ Consider the 1st node to have index 1 and so on. The relative order of the eleme
 
 const { llCreate } = require("./1_InsertAtHeadLinkedList");
 
-let head = llCreate([1, 2, 3, 4]);
+let head = llCreate([2, 1, 3, 5, 6, 4, 7]);
 
-
-function segregateEvenOdd(head) {
+//Approach 1, Did for Value, DO for Indeces in 2nd Approach 2
+function segregateEvenOdd_1(head) {
     if (!head) return head;
 
     let dummy = llCreate([-1])
     dummy.next = head;
 
-    let left = head;
-    let right = head.next;
+    let left = dummy;
+    let right = dummy;
 
-    let prevL = dummy;
-    let prevR = head;
-
-
-    while (right) {
-
-        let isLeftEven = ((left.data % 2) == 0);
-        let isRightOdd = ((right.data % 2) != 0);
-
-
-        if (isLeftEven && !isRightOdd) { //both even
+    while (right && right.next) {
+        if (left.next && left.next.data % 2 != 0) {
             left = left.next;
+            if (right.next == left) right = right.next
+        }
+
+        if (right.next && right.next.data % 2 == 0) {
             right = right.next;
-
-            prevL = prevL.next
-            prevR = prevR.next
         }
 
-        else if (!isLeftEven && !isRightOdd) { //left odd, right even
-            console.log("left:", left, "right:",right)
+        if (right !== left && right.next && right.next.data % 2 != 0) {
 
-            prevL.next = right;
-            prevR.next = left;
+            let temp1 = right.next.next;
+            let temp2 = left.next;
 
-            let temp = right.next;
-            right.next = left.next;
-            left.next = temp.next;
-        
-            temp = right;
-            right = left;
-            left = temp
-            
+            left.next = right.next;
             left = left.next;
-            right = right.next;
-
-            prevL = prevL.next
-            prevR = prevR.next
+            left.next = temp2;
+            right.next = temp1
         }
 
-        else if (isLeftEven && isRightOdd) { // left even, right odd
-            right = right.next
-            left = left.next;
-
-            prevL = prevL.next
-            prevR = prevR.next
-        }
-        else if (isRightOdd) { // right odd
-            right = right.next; 
-            prevR = prevR.next
-        }
     }
-    // console.log(head)
 
+    head = dummy.next;
     return head;
 }
 
-console.log("Segregate Even Odd", segregateEvenOdd(head))
+console.log("Segregate Even Odd", segregateEvenOdd_1(head))
+
+
+//Approach 2, Did for Value, DO for Indeces in 2nd Approach 2
+function segregateEvenOdd_2(head) {
+    if (!head) return head;
+
+    let dummy = llCreate([-1])
+    dummy.next = head;
+
+    let left = dummy;
+    let right = dummy;
+
+    while (right && right.next) {
+        if (left.next && left.next.data % 2 != 0) {
+            left = left.next;
+            if (right.next == left) right = right.next
+        }
+
+        if (right.next && right.next.data % 2 == 0) {
+            right = right.next;
+        }
+
+        if (right !== left && right.next && right.next.data % 2 != 0) {
+
+            let temp1 = right.next.next;
+            let temp2 = left.next;
+
+            left.next = right.next;
+            left = left.next;
+            left.next = temp2;
+            right.next = temp1
+        }
+
+    }
+
+    head = dummy.next;
+    return head;
+}
+
+console.log("Segregate Even Odd", segregateEvenOdd_2(llCreate([2, 1, 3, 5, 6, 4, 7])))

@@ -1,0 +1,10 @@
+{
+  "folders": [
+    {
+      "path": "../WebApis",
+    },
+  ],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "WebWorker",
+  },
+}

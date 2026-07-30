@@ -25,7 +25,7 @@ function insertionSort(nums) {
 }
 
 
-console.log("SelectionSort", insertionSort(nums))
+console.log("Insertion", insertionSort(nums))
 
 
 /*

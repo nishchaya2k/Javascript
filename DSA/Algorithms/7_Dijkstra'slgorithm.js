@@ -1,25 +1,46 @@
 /*
-Dijkstra's Algorithm is a "greedy" graph search algorithm used to find the shortest path from a single source node to all other reachable nodes in a weighted graph
-
+Dijkstra's Algorithm is a greedy graph algorithm used to find the shortest
+distance from a single source node to all other reachable nodes in a weighted graph
+(with non-negative edge weights).
 
 How It Works:
 
-1. Assign a distance of 0 to the source node and ∞ (infinity) to all other nodes.
-2. Mark all nodes as unvisited.
-3. Select the unvisited node with the smallest tentative distance.
-4. For each of its neighbors:
- -> Calculate the distance through the current node.
- -> If this distance is smaller than the neighbor's current distance, update it.
-5. Mark the current node as visited.
-6. Repeat until all nodes are visited or the destination is reached.
+1. Assign a distance of 0 to the source node and ∞ (Infinity) to all other nodes.
+
+2. Insert the source node into the Priority Queue with distance 0.
+
+3. Repeatedly remove the node having the smallest current distance.
+   (Greedy Choice)
+
+4. For each neighbour:
+   -> newDistance = currentDistance + edgeWeight
+   -> If newDistance < current shortest distance,
+      update the neighbour's distance and push it into the Priority Queue.
+   (This process is called Relaxation.)
+
+5. Example:
+
+      A ----4----> B
+
+      A ----1----> C ----2----> B
+
+   Current shortest distance to B = 4
+
+   New distance via C = 1 + 2 = 3
+
+   Since 3 < 4,
+   update dist[B] = 3 and push B into the Priority Queue again.
+
+6. Continue until the Priority Queue becomes empty.
+   At this point, every node contains its shortest distance from the source.
 
 
+Limitations:
 
-a. Limitations and Complexities:
-
-Negative Weights: Dijkstra's algorithm cannot be used on graphs with negative edge weights. For those, algorithms like Bellman-Ford are required.
-
-Time Complexity: Depending on the implementation, it can be O(V²) for simple array implementations or \(O((E + V) \log V)\) when using a Min-Heap/Priority Queue (where V is the number of vertices and E is the number of edges).
+1. Works only for non-negative edge weights.
+2. Negative edge weights can produce a shorter path after a node has already
+   been processed, breaking Dijkstra's greedy assumption.
+3. For graphs with negative edge weights, use Bellman-Ford.
 */
 
 let V = 3, edges = [[0, 1, 1], [1, 2, 3], [0, 2, 6]], src = 2

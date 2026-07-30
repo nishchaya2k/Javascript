@@ -1,25 +1,40 @@
-.card-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: flex-start;
-  height: 400px;
-  overflow: scroll;
-  margin: auto;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
-.card {
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 0.25rem;
-  padding: 0.5rem;
-  transform: translateX(100px);
-  opacity: 0;
-  transition: 150ms;
-  color: black;
+body{
+    background:#f5f5f5;
+    padding:30px;
 }
 
-.card.show {
-  transform: translateX(0);
-  opacity: 1;
+h1{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+#products{
+    max-width:700px;
+    margin:auto;
+}
+
+.product{
+    background:white;
+    padding:20px;
+    margin-bottom:15px;
+    border-radius:8px;
+    box-shadow:0 2px 6px rgba(0,0,0,.1);
+}
+
+.product h2{
+    margin-bottom:10px;
+}
+
+#loader{
+    text-align:center;
+    padding:30px;
+    font-size:18px;
+    color:gray;
 }

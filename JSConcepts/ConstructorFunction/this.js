@@ -149,3 +149,17 @@ var obj = {
 
 var func = obj.greet();
 func();
+
+
+
+/*
+Always Consider the environment where code is running, bcoz on 
+vs code -> {}, Broswer -> Window object 
+
+NON STRICT MODE
+undefiend -> 'this substitution Process' -> window object
+
+
+STRICT MODE
+undefiend -> 'this substitution Process' [Doesn't Work] -> undefiend
+*/

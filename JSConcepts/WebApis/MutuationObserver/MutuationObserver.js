@@ -63,5 +63,4 @@ mutuationObserver.observe(parent, {
 
 
 
-
 //how can we visualize dom structure ? 

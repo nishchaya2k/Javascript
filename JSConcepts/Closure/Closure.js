@@ -18,6 +18,7 @@ function x() {
 const z = x();
 z();
 
+//bcoz of memory heap, we have reference of a, & we can have access of a from y function
 
 // ...........Example 2.............
 

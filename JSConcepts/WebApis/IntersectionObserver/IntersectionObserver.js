@@ -1,6 +1,9 @@
 /* 
 Intersection Observer: its a tool which lets you track visibility of elements relative to the viewport. This is perfect for scroll animations, lazy loading images, infinite scroll, and much more. Also, Intersection Observer is best for Performance-optimized DOM watching 
 
+IntersectionObserver is a browser API that tells you when an element enters or leaves another element's visible area (usually the viewport).
+
+IntersectionObserver observes whether an element is visible inside the viewport
 
 - Syntax
 

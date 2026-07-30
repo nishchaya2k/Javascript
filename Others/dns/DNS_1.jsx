@@ -121,9 +121,43 @@
 6. **Redundancy**: Multiple layers of routers ensure redundancy and efficiency in case of failures or network congestion at certain layers.
 
 
+7. 
+Browser
+   ↓
+Cache Check
+   ↓
+ISP DNS Resolver
+   ↓
+Root Server
+   ↓
+TLD Server
+   ↓
+Authoritative Server
+   ↓
+Gets IP
+   ↓
+Browser connects to website
+
 
 Q. Recursive and Iterative Approch to find IP Address, what way is best & why, or how we choose ? -> Both Ways Are best
 Q. DNS Record in Authoritative Server ?
 Q. IP Address Keeps on Changing ? Rotation/Shifting of Request, CNAME
+
+
+
+
+https://blog.bytebytego.com/p/how-does-the-domain-name-system-dns
+https://medium.com/@itherohit/demystifying-dns-lookups-a-comprehensive-guide-to-how-they-work-1c7f4b3f4d27
+*/
+
+
+/*
+
+Summary:
+
+url hit -> Browser Cache(sw,http) -> Device (OS) -> Home Router -> Area Router -> City Router (ISP) ->  
+
+
+1. HOW PACKATES TRAVEL B/W ROUTERS ?
 
 */

@@ -4,29 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Intersection Observer - Infinite Scroll</title>
+
     <link rel="stylesheet" href="style.css">
-    <script defer src="./IntersectionObserver.js"></script>
+    <script defer type="module" src="1_script.js"></script>
 </head>
 
 <body>
-    <div class="card-container">
-        <div class="card show">This is the first card</div>
-        <div class="card">This is a card</div>
-        <div class="card">This is a card</div>
-        <div class="card">This is a card</div>
-        <div class="card">This is a card</div>
-        <div class="card">This is a card</div>
-        <div class="card">This is a card</div>
-        <div class="card">This is a card</div>
-        <div class="card">This is a card</div>
-        <div class="card">This is a card</div>
-        <div class="card">This is a card</div>
-        <div class="card">This is a card</div>
-        <div class="card">This is a card</div>
-        <div class="card">This is a card</div>
-        <div class="card">This is the last card</div>
-    </div>
+
+    <h1>Products</h1>
+
+    <div id="products"></div>
+
+    <!-- Invisible element that we observe -->
+    <div id="loader">Loading more products...</div>
 
 </body>
 

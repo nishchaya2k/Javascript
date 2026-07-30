@@ -23,7 +23,7 @@ class Node {
 }
 
 
-//Approach 1, Without Dummy Node
+//Approach 1, Without Dummy Node, TC: O(1)
 class LRUCache {
     constructor(x) {
         this.capacity = x
@@ -119,7 +119,7 @@ container.put({ id: '4', name: 'tiger' })
 
 
 
-//Approach 2, With Dummy Node
+//Approach 2, With Dummy Node, TC: O(1)
 
 class LRUCache {
     constructor(x) {

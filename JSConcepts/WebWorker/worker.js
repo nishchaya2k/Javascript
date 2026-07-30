@@ -18,6 +18,6 @@ onmessage = function (message) {
 }
 
 
-
+//onMessage, postMessage
 
 //analytics of Ecommerce website, to track data eg. how many times users visit on that sit
