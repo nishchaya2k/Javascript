@@ -1,8 +1,3 @@
-/*
-Problem Statement: Given the root of a binary tree, return the Post Order traversal of its nodes' values.
-*/
-
-let input = []
 
 class Node{
     constructor(data){
@@ -42,31 +37,4 @@ function constructBinaryTree(input){
     return root
 }
 
-//Approach 1, do -> NRL -> reverse , TC: O(n), SC: O(h)
-function postOrder_1(input){
-    let root =  constructBinaryTree(input)
-
-
-    let stack = [],res=[];
-
-    while(true){
-        if(root!==null){
-            res.push(root.data);
-            stack.push(root)
-            root=root.right;
-        }else{
-            if(stack.length==0)break;
-
-            root = stack.pop();
-            root = root.left
-        }
-    }
-
-    return res.reverse()
-
-}
-
-console.log("Post Order",postOrder_1(input))
-
-
-
+module.exports = {constructBinaryTree};
