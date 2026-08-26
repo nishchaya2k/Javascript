@@ -11,13 +11,25 @@ let s = "ababcbacadefegdehijhklij";
 
 function partitionLabel(s){
     let n = s.length;
-    let freq={};
+    let lastIndex={},res = [];
 
     for(let i=0;i<n;i++){
-        freq[i] = (freq[i]||0)+1
+        lastIndex[s[i]] = i;
     }
-    let i=0,j=0;
 
+    let partsIndex=0,maxLastIndex = 0;
+
+    for(let i=0;i<n;i++){
+
+        maxLastIndex = Math.max(lastIndex[s[i]], maxLastIndex)
+
+        if(lastIndex[s[i]] == maxLastIndex){
+            res.push(i-partsIndex);
+            partsIndex = i+1;
+        }
+    }
+
+    return res;
 
 }
 
