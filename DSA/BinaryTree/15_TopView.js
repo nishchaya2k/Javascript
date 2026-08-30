@@ -16,7 +16,7 @@ function topView_1(root){
         if (!root) return;
         // If this horizontal distance hasn't been seen
         // OR this node is higher than the stored node
-        if(!map.has(hd) || depth<map.get(hd).depth){
+        if(!map.has(hd) || depth < map.get(hd).depth){
             map.set(hd, {
                 value: node.data,
                 depth: depth
@@ -40,6 +40,7 @@ function topView_2(root){
     const queue = [{ node: root, hd: 0 }];
 
     while(front < queue.length){
+        let { node, hd } = queue[front++];
 
           // First node at this horizontal distance
         if (!map.has(hd)) {
