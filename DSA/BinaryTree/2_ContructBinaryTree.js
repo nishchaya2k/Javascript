@@ -1,22 +1,22 @@
 
-class Node{
-    constructor(data){
+class Node {
+    constructor(data) {
         this.data = data;
-        this.left=null;
-        this.right=null;
+        this.left = null;
+        this.right = null;
     }
 
 }
 
-function constructBinaryTree(input){
+function constructBinaryTree(input) {
 
     if (input.length === 0 || input[0] === -1) return null;
 
-    let queue = [],n = input.length,front=0;
+    let queue = [], n = input.length, front = 0;
     let root = new Node(input[0]);
     queue.push(root)
 
-    for(let i=1;i<n;i+=2){
+    for (let i = 1; i < n; i += 2) {
         let parent = queue[front++];
 
         // Left child
@@ -32,9 +32,9 @@ function constructBinaryTree(input){
             parent.right = right;
             queue.push(right);
         }
-       
+
     }
     return root
 }
 
-module.exports = {constructBinaryTree};
+module.exports = { Node, constructBinaryTree };
